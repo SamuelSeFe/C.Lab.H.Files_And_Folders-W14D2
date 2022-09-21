@@ -33,7 +33,7 @@ public class FileController {
     }
 
     @DeleteMapping(value = "/files/{id}")
-    public ResponseEntity deleteFileById(@PathVariable Long id){
+    public ResponseEntity<File> deleteFileById(@PathVariable Long id){
         fileRepository.deleteById(id);
         return new ResponseEntity(id, HttpStatus.OK);
     }
